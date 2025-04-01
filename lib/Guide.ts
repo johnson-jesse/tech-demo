@@ -35,18 +35,11 @@ export class Guide implements Actor {
   }
 
   handleKeyPress(event: KeyboardEvent) {
-    if (event.defaultPrevented) return; // Do nothing if event already handled
-
     switch (event.code) {
       case "KeyG":
         this.show = !this.show;
+        event.preventDefault();
         break;
-    }
-
-    if (event.code !== "Tab") {
-      // Consume the event so it doesn't get handled twice,
-      // as long as the user isn't trying to move focus away
-      event.preventDefault();
     }
   }
 }

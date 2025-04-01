@@ -51,19 +51,43 @@ export class Director {
     document.removeEventListener("keypress", this.handleKeyPress);
   }
 
+  private handlePaused() {
+    this.paused = !this.paused;
+
+    if (this.paused) {
+      this.ctx.globalAlpha = 0.5;
+      this.draw();
+    } else {
+      this.ctx.globalAlpha = 1;
+      window.requestAnimationFrame((t) => this.step(t));
+    }
+  }
+
   private handleMouse(event: MouseEvent) {
     this.cast.forEach((a) => a.setTarget?.(event.clientX, event.clientY));
   }
 
   private handleKeyDown(event: KeyboardEvent) {
+    if (event.defaultPrevented) return;
     this.cast.forEach((a) => a.handleKeyDown?.(event));
   }
 
   private handleKeyUp(event: KeyboardEvent) {
+    if (event.defaultPrevented) return;
     this.cast.forEach((a) => a.handleKeyUp?.(event));
   }
 
   private handleKeyPress(event: KeyboardEvent) {
+    if (event.defaultPrevented) return;
+
+    switch (event.code) {
+      case "KeyP":
+        this.handlePaused();
+        event.preventDefault();
+        break;
+    }
+
+    if (event.defaultPrevented) return;
     this.cast.forEach((a) => a.handleKeyPress?.(event));
   }
 

@@ -19,8 +19,9 @@ export function MouseFollower() {
 
   const handleContextValid = useCallback(
     (valid: boolean) => {
-      if (valid) director?.restart(); else director?.halt();
-      setPaused(!valid)
+      if (valid) director?.restart();
+      else director?.halt();
+      setPaused(!valid);
     },
     [director]
   );
@@ -32,9 +33,14 @@ export function MouseFollower() {
         onContextValid={handleContextValid}
       />
       {!paused && (
-        <div className="absolute top-[50%] left-5 text-xs text-gray-600">
-          [g]: show guide
-        </div>
+        <>
+          <div className="absolute top-[50%] left-5 text-xs text-gray-600">
+            [ g ]: show guide
+          </div>
+          <div className="absolute top-[50% - 10px] left-5 text-xs text-gray-600">
+            [ p ]: pause
+          </div>
+        </>
       )}
     </>
   );
