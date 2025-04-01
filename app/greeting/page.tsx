@@ -9,6 +9,7 @@ import { Footer } from "@/lib/components/Footer";
 import { SubmitButton } from "@/lib/components/ux/SubmitButton";
 import { RootDiv } from "@/lib/components/ux/RootDiv";
 import { Main } from "@/lib/components/ux/Main";
+import { useState } from "react";
 
 export type FormValues = {
   name: string;
@@ -35,27 +36,30 @@ const schema: ZodType<FormValues> = z.object({
 });
 
 export default function Greeting() {
+  const [pending, setPending] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
+
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      const payload = await fetch("/api/greeting", {
+      setPending(true);
+      await fetch("/api/greeting", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json", // Set the content type to JSON
         },
       });
-
-      const response = await payload.json();
-      console.log("response", response)
       reset();
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setPending(false);
     }
   };
 
@@ -74,24 +78,29 @@ export default function Greeting() {
             {...register("name")}
             label="Name"
             error={errors.name?.message}
+            disabled={pending}
           />
           <InputField
             id="email"
             {...register("email", {})}
             label="Email"
             error={errors.email?.message}
+            disabled={pending}
           />
           <InputField
             {...register("phone")}
             label="Phone"
             error={errors.phone?.message}
+            disabled={pending}
           />
           <TextareaField
             {...register("message")}
             label="Message"
             error={errors.message?.message}
+            disabled={pending}
           />
-          <SubmitButton />
+          <SubmitButton disabled={pending} activity={pending} />
+          {pending && <div className='w-full text-center tracking-widest'>Hold on, we&apos;re doing computery things...</div>}
         </form>
       </Main>
       <Footer />
