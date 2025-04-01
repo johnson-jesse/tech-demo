@@ -4,7 +4,7 @@
 "use client";
 
 import { Director } from "@/lib/Director";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Canvas2D from "./Canvas2D";
 
 export function MouseFollower() {
@@ -25,6 +25,10 @@ export function MouseFollower() {
     },
     [director]
   );
+
+  useEffect(() => {
+    return () => director?.halt();
+  }, [director]);
 
   return (
     <>
