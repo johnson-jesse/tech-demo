@@ -7,7 +7,9 @@ export default function Page() {
     <RootDiv>
       <Main className="md:w-[65%] m-auto">
         <h1 className="text-3xl font-bold mb-4 self-center">MIT License</h1>
-        <h2 className="mb-4 text-gray-400 self-center">Copyright (c) 2025 Jesse A. Johnson (Fizzog)</h2>
+        <h2 className="mb-4 text-gray-400 self-center">
+          Copyright (c) 2025 Jesse A. Johnson (Fizzog)
+        </h2>
         <p>
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the

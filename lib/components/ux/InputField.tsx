@@ -18,9 +18,7 @@ export function InputField({
 }: InputFieldProps) {
   return (
     <div className={`flex flex-col ${className}`}>
-      {label && (
-        <Label htmlFor={props.name}>{label}</Label>
-      )}
+      {label && <Label htmlFor={props.name}>{label}</Label>}
       <Input className={error ? "border-red-500" : ""} {...props} />
       {error && <span className="text-red-500 text-sm mt-1">{error}</span>}
     </div>

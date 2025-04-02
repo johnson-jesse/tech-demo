@@ -22,7 +22,7 @@ export const Steering = {
 } as const;
 
 export const Layer = {
-    surface_main: 9999
+  surface_main: 9999,
 } as const;
 
 export const MINIMUM_BROWSER_WIDTH = 768;

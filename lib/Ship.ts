@@ -70,7 +70,7 @@ export class Ship implements Actor, Movement {
     const steering = this.target.clone().subtract(this.position);
     const dist = steering.magnitude();
     steering.setMagnitude(
-      (Steering.speed * 0.75 * (dist / Steering.arrive_radius) * (1 + elapsed))
+      Steering.speed * 0.75 * (dist / Steering.arrive_radius) * (1 + elapsed)
     );
 
     if (steering.magnitude() < Steering.speed * 0.5) steering.set(0, 0);

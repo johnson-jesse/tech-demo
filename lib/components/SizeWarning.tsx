@@ -15,5 +15,7 @@ export function SizeWarning() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return isMobile ? <h2 className="ms-2">For the full experience, desktop is the way</h2> : null
+  return isMobile ? (
+    <h2 className="ms-2">For the full experience, desktop is the way</h2>
+  ) : null;
 }

@@ -100,7 +100,11 @@ export default function Greeting() {
             disabled={pending}
           />
           <SubmitButton disabled={pending} activity={pending} />
-          {pending && <div className='w-full text-center tracking-widest'>Hold on, we&apos;re doing computery things...</div>}
+          {pending && (
+            <div className="w-full text-center tracking-widest">
+              Hold on, we&apos;re doing computery things...
+            </div>
+          )}
         </form>
       </Main>
       <Footer />

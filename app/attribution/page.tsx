@@ -8,7 +8,7 @@ export default function Attribution() {
   return (
     <RootDiv>
       <Main className="md:w-[65%] m-auto items-center">
-      <h1 className="text-3xl font-bold mb-4">Attribution</h1>
+        <h1 className="text-3xl font-bold mb-4">Attribution</h1>
         <p className="tracking-widest">
           Every line of code was handcrafted by me, though I gratefully
           acknowledge the insights and help from various sources.

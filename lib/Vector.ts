@@ -41,7 +41,7 @@ export class Vector {
   }
 
   rotate(increment: number) {
-    const rad = increment * (Math.PI / 180)
+    const rad = increment * (Math.PI / 180);
     const cosA = Math.cos(rad);
     const sinA = Math.sin(rad);
     const _x = this.x;

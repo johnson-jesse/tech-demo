@@ -28,7 +28,7 @@ export class Flashlight implements Actor {
   private drawMask(ctx: CanvasRenderingContext2D) {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.save();
-  
+
     ctx.fillStyle = "rgba(0, 0, 0, 0.9)";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.translate(this.position.x, this.position.y);

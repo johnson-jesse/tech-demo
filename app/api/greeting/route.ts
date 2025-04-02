@@ -44,10 +44,7 @@ export async function POST(request: NextRequest) {
     });
 
     console.log("Message sent: %s", info.messageId);
-    return NextResponse.json(
-      { message: "Received" },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Received" }, { status: 200 });
   } catch (error) {
     console.log(error);
     return new Response(JSON.stringify({ error: "Invalid JSON" }), {
