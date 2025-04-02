@@ -32,12 +32,12 @@ export async function POST(request: NextRequest) {
     <h1>Thank you for your thoughts!</h1>
     <p>Dear Friend,</p>
     <p>I have received your message and will answer any questions as soon as I can.</p>
-    <p>Your sent:</p>
-    <code>name: ${name ? name : ""}</code>
+    <p>You sent:</p>
+    <code>&nbsp;name: ${name ? name : ""}</code>
     <br />
     <code>phone: ${phone ? phone : ""}</code>
     <br /><br />
-    <blockquote>${message}</blockquote>
+    <blockquote>&quot;${message}&quot;</blockquote>
     <br /><br />
     <p>Best regards,<br/>Fizzog a.k.a Jesse</p>
 `,
