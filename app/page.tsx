@@ -24,7 +24,7 @@ export default function Home() {
 
         <Image
           className="rounded-full"
-          src="/fizzog.png"
+          src="/fizzog_pixel.png"
           alt="fizzog"
           width={180}
           height={240}
