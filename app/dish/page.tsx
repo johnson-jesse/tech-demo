@@ -18,7 +18,7 @@ export default function Dish() {
       <p>
         Specifically, this project is designed to work with <code>i18next</code>{" "}
         and <code>react-i18next</code> by tracking usage of{" "}
-        <code>useTranslation</code> and <code>t('namespace:key')</code>.
+        <code>useTranslation</code> and <code>t(&apos;namespace:key&apos;)</code>.
       </p>
 
       <h2>Features</h2>
