@@ -21,7 +21,6 @@ export default function Home() {
           </small>
         </h1>
         <SizeWarning />
-
         <Image
           className="rounded-full"
           src="/fizzog_pixel.png"
@@ -38,7 +37,6 @@ export default function Home() {
             ReactJS | NextJS | Tailwind CSS | Game Theory
           </li>
         </ul>
-
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
@@ -61,13 +59,25 @@ export default function Home() {
           >
             Send a greeting / ask a question
           </Link>
-          <Link
-            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            href="/dish"
-          >
-            @fizzog/dish - i18next localalization tooling
-          </Link>
         </div>
+        <ul
+          style={{
+            listStyleType: "disc",
+            paddingLeft: "1.5rem",
+          }}
+        >
+          Other Work:
+          <li>
+            <a
+              // className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+              href="https://www.npmjs.com/package/@fizzog/dish"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @fizzog/dish - i18next localalization tooling
+            </a>
+          </li>
+        </ul>
       </Main>
       <Footer />
     </RootDiv>
