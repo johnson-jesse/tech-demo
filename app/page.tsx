@@ -69,12 +69,11 @@ export default function Home() {
           Other Work:
           <li>
             <a
-              // className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-              href="https://www.npmjs.com/package/@fizzog/dish"
+              href="https://github.com/johnson-jesse"
               target="_blank"
               rel="noopener noreferrer"
             >
-              @fizzog/dish - i18next localalization tooling
+              GitHub - Jesse Johnson
             </a>
           </li>
         </ul>

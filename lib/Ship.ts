@@ -14,7 +14,7 @@ export class Ship implements Actor, Movement {
   constructor() {
     this.img = new Image();
     this.img.src = "./Ship.png";
-    this._position = new Vector(-50, -50);
+    this._position = new Vector(150, 150);
     this._velocity = Vector.Zero();
     this.target = Vector.Zero();
     this.state = this.arrive;

@@ -41,7 +41,7 @@ export function MouseFollower() {
           <div className="absolute top-[50%] left-5 text-xs text-gray-600">
             [ g ]: show guide
           </div>
-          <div className="absolute top-[50% - 10px] left-5 text-xs text-gray-600">
+          <div className="absolute top-[50% - 20px] left-5 text-xs text-gray-600">
             [ p ]: pause
           </div>
         </>
