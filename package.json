@@ -14,7 +14,7 @@
     "autoprefixer": "^10.4.21",
     "highlight.js": "^11.11.1",
     "marked": "^15.0.10",
-    "next": "15.2.4",
+    "next": "15.2.8",
     "nodemailer": "^6.10.0",
     "postcss": "^8.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
