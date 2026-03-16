@@ -1,24 +1,17 @@
 "use client";
 
-import InputField from "@/lib/components/ux/InputField";
-import TextareaField from "@/lib/components/ux/TextareaField";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z, ZodType } from "zod";
 import { Footer } from "@/lib/components/Footer";
-import { SubmitButton } from "@/lib/components/ux/SubmitButton";
-import { RootDiv } from "@/lib/components/ux/RootDiv";
+import InputField from "@/lib/components/ux/InputField";
 import { Main } from "@/lib/components/ux/Main";
+import { RootDiv } from "@/lib/components/ux/RootDiv";
+import { SubmitButton } from "@/lib/components/ux/SubmitButton";
+import TextareaField from "@/lib/components/ux/TextareaField";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 
-export type FormValues = {
-  name: string;
-  email: string;
-  phone?: string;
-  message: string;
-};
-
-const schema: ZodType<FormValues> = z.object({
+const schema = z.object({
   name: z.string().nonempty({ message: "What should I call you?" }),
   phone: z
     .string()
@@ -34,6 +27,8 @@ const schema: ZodType<FormValues> = z.object({
   email: z.string().email({ message: "This doesn't look right" }),
   message: z.string().nonempty({ message: "Any thoughts?" }),
 });
+
+export type FormValues = z.input<typeof schema>;
 
 export default function Greeting() {
   const [pending, setPending] = useState(false);
