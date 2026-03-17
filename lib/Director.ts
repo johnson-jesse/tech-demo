@@ -29,7 +29,13 @@ export class Director {
     return d;
   }
 
+  cleanup() {
+    console.log("cleanup called")
+    this.listenStop();
+  }
+
   halt() {
+    console.log("halt called")
     if (!this.paused) {
       this.listenStop();
       this.paused = true;
@@ -37,6 +43,7 @@ export class Director {
   }
 
   restart() {
+    console.log("restart called")
     if (this.paused) {
       this.initializeListeners();
       this.paused = false;

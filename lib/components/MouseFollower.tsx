@@ -27,7 +27,7 @@ export function MouseFollower() {
   );
 
   useEffect(() => {
-    return () => director?.halt();
+    return () => director?.cleanup();
   }, [director]);
 
   return (
