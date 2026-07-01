@@ -23,7 +23,7 @@ copies of the Software, subject to the following conditions:
 1. **Attribution Requirement:** Any use of this software, including modified versions,  
    must include clear attribution to the original author. This attribution must include:  
    - The author's name: Jesse A. Johnson 
-   - A link to the original GitHub repository: [Your GitHub URL]  
+   - A link to the original GitHub repository: [https://github.com/johnson-jesse/tech-demo](https://github.com/johnson-jesse/tech-demo)
    - The author's contact email: jesse@fizzog.io
    - A thank you note to me 🤗
 
