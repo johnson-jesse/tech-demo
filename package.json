@@ -15,14 +15,15 @@
     "autoprefixer": "^10.4.21",
     "highlight.js": "^11.11.1",
     "marked": "^15.0.10",
-    "next": "^15.5.13",
-    "nodemailer": "^8.0.2",
+    "next": "^16.2.10",
+    "nodemailer": "^9.0.3",
     "postcss": "^8.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-hook-form": "^7.55.0",
     "rehype-highlight": "^7.0.2",
+    "shiki": "^4.3.1",
     "tailwind-merge": "^3.1.0",
     "zod": "^4.3.6"
   },
@@ -35,7 +36,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "^16.2.10",
     "tailwindcss": "^4.0.17",
     "typescript": "^5"
   }

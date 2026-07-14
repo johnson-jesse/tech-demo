@@ -29,7 +29,7 @@ export default function Home() {
         src="/fizzog_pixel.png"
         alt="fizzog"
         width={180}
-        height={240}
+        height={270}
         priority
       />
       <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -37,13 +37,19 @@ export default function Home() {
           className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
           href="/follow"
         >
-          Vectors | Space Ship Follow
+          Vector Math | Mouse Follow
         </Link>
         <Link
           className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
           href="/sql"
         >
           TypeScript SQL Engine
+        </Link>
+        <Link
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+          href="/big-o"
+        >
+          Big-O Visualizer
         </Link>
       </div>
       <ul

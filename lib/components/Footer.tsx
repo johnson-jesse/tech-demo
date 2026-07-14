@@ -25,7 +25,12 @@ export function Footer() {
       >
         {pathname === "/sql" ? "[ SQL ]" : "SQL"}
       </Link>
-
+      <Link
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="/big-o"
+      >
+        {pathname === "/big-o" ? "[ Big O ]" : "Big O"}
+      </Link>
       <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/license"
