@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export function Footer() {
   const pathname = usePathname();
   return (
-    <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+    <footer className="mt-auto flex gap-6 flex-wrap items-center justify-center py-6">
       <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/"
@@ -15,10 +15,24 @@ export function Footer() {
       </Link>
       <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="/follow"
+      >
+        {pathname === "/follow" ? "[ Follow ]" : "Follow"}
+      </Link>
+      <Link
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="/sql"
+      >
+        {pathname === "/sql" ? "[ SQL ]" : "SQL"}
+      </Link>
+
+      <Link
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/license"
       >
-        {pathname === "/license" ? "[ License ]" : "license"}
+        {pathname === "/license" ? "[ License ]" : "License"}
       </Link>
+
       <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/attribution"

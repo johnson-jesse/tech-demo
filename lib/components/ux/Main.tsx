@@ -6,7 +6,7 @@ export function Main({ className, ...props }: MainProps) {
   return (
     <main
       className={twMerge(
-        "flex flex-col gap-[32px] row-start-2 items-center",
+        "flex flex-col gap-8 row-start-2 items-center",
         className
       )}
       {...props}
