@@ -1,15 +1,14 @@
 "use client";
 
-import { Footer } from "@/lib/components/Footer";
-import InputField from "@/lib/components/ux/InputField";
-import { Main } from "@/lib/components/ux/Main";
-import { RootDiv } from "@/lib/components/ux/RootDiv";
-import { SubmitButton } from "@/lib/components/ux/SubmitButton";
-import TextareaField from "@/lib/components/ux/TextareaField";
+import { Footer } from "@/components/Footer";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import TextareaField, { InputField } from "@/components/TextareaField";
+import { RootDiv } from "@/components/RootDiv";
+import { SubmitButton } from "@/components/SubmitButton";
+import { Main } from "@/components/Main";
 
 const schema = z.object({
   name: z.string().nonempty({ message: "What should I call you?" }),
@@ -60,7 +59,7 @@ export default function Greeting() {
 
   return (
     <RootDiv>
-      <Main className="">
+      <Main>
         <h1 className="text-5xl font-extrabold dark:text-white">
           I would love to hear from you.
           <br />

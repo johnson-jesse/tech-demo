@@ -1,10 +1,10 @@
 /// Copyright (c) 2025 Jesse A. Johnson (Fizzog)
 /// Attribution required. See LICENSE.
 
-import { Ship } from "./Ship";
-import { Flashlight } from "./Flashlight";
 import { Actor } from "./const";
+import { Flashlight } from "./Flashlight";
 import { Guide } from "./Guide";
+import { Ship } from "./Ship";
 
 export class Director {
   private ctx: CanvasRenderingContext2D;
@@ -30,12 +30,12 @@ export class Director {
   }
 
   cleanup() {
-    console.log("cleanup called")
+    console.log("cleanup called");
     this.listenStop();
   }
 
   halt() {
-    console.log("halt called")
+    console.log("halt called");
     if (!this.paused) {
       this.listenStop();
       this.paused = true;
@@ -43,7 +43,7 @@ export class Director {
   }
 
   restart() {
-    console.log("restart called")
+    console.log("restart called");
     if (this.paused) {
       this.initializeListeners();
       this.paused = false;

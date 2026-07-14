@@ -1,7 +1,7 @@
 /// Copyright (c) 2025 Jesse A. Johnson (Fizzog)
 /// Attribution required. See LICENSE.
 
-import { SizeWarning } from "@/lib/components/SizeWarning";
+import { SizeWarning } from "@/components/SizeWarning";
 import Image from "next/image";
 import Link from "next/link";
 

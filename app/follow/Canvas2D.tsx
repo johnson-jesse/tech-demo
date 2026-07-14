@@ -3,8 +3,8 @@
 
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { Layer, MINIMUM_BROWSER_WIDTH } from "../const";
+import { useEffect, useRef, useState } from "react";
+import { Layer, MINIMUM_BROWSER_WIDTH } from "./const";
 
 type Props = {
   onContextReady: (context: CanvasRenderingContext2D, valid: boolean) => void;
