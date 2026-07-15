@@ -1,44 +1,48 @@
 import { sigmoid } from "./activation";
+import { Layer } from "./Layer";
 import { Matrix } from "./Matrix";
 
 export class NeuralNetwork {
-  layers: number[];
+  public readonly layers: Layer[];
 
-  weights: Matrix[];
-  biases: Matrix[];
+  constructor(shape: number[]) {
+    if (shape.length < 2) {
+      throw new Error(
+        "A neural network must have at least an input and an output layer.",
+      );
+    }
 
-  constructor(layerSizes: number[]) {
-    this.layers = layerSizes;
+    this.layers = [];
 
-    this.weights = [];
-    this.biases = [];
-
-    for (let i = 0; i < layerSizes.length - 1; i++) {
-      const rows = layerSizes[i];
-      const cols = layerSizes[i + 1];
-
-      const weightMatrix = new Matrix(rows, cols);
-      weightMatrix.randomize();
-
-      const biasMatrix = new Matrix(1, cols);
-      biasMatrix.randomize();
-
-      this.weights.push(weightMatrix);
-      this.biases.push(biasMatrix);
+    for (let i = 1; i < shape.length; i++) {
+      this.layers.push(new Layer(shape[i - 1], shape[i]));
     }
   }
 
-  feedForward(inputArray: number[]): number[] {
-    const inputs = Matrix.fromArray(inputArray);
+  public feedForward(inputs: number[]): number[] {
+    let current = Matrix.fromArray(inputs);
 
-    let current = inputs;
+    for (const layer of this.layers) {
+      // Save the inputs to this layer
+      layer.inputs = current.copy();
 
-    for (let i = 0; i < this.weights.length; i++) {
-      current = current.multiply(this.weights[i]);
+      // Calculate the weighted sums (z)
+      const weightedSums = layer.weights.multiply(current).add(layer.biases);
 
-      current.map(sigmoid);
+      // Save z for backpropagation later
+      layer.weightedSums = weightedSums.copy();
+
+      // Apply the activation function
+      current = weightedSums.map(sigmoid);
+
+      // Save the activated outputs (a)
+      layer.outputs = current.copy();
     }
 
     return current.toArray();
+  }
+
+  public inspect() {
+    return this.layers.map((layer) => layer.inspect());
   }
 }

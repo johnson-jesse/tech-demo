@@ -3,7 +3,7 @@
 
 "use client";
 
-import { Director } from "@/lib/Director";
+import { Director } from "./Director";
 import { useCallback, useEffect, useState } from "react";
 import Canvas2D from "./Canvas2D";
 
