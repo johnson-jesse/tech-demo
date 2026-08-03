@@ -4,8 +4,19 @@ import nodemailer from "nodemailer";
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, message } =
+    const { name, email, phone, website, message } =
       (await request.json()) as unknown as FormValues;
+
+    console.table({ name, email, phone, website, message });
+
+    if (website && website.length > 0) {
+      console.info("Honeypot triggered", {
+        ip: request.headers.get("x-forwarded-for"),
+        userAgent: request.headers.get("user-agent"),
+        value: website,
+      });
+      return NextResponse.json({ message: "Received" }, { status: 200 });
+    }
 
     if (!message || !email)
       return NextResponse.json({ error: "Missing form data" }, { status: 400 });

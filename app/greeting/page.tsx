@@ -1,14 +1,15 @@
 "use client";
 
 import { Footer } from "@/components/Footer";
+import HoneyPot from "@/components/HoneyPot";
+import { Main } from "@/components/Main";
+import { RootDiv } from "@/components/RootDiv";
+import { SubmitButton } from "@/components/SubmitButton";
+import TextareaField, { InputField } from "@/components/TextareaField";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import TextareaField, { InputField } from "@/components/TextareaField";
-import { RootDiv } from "@/components/RootDiv";
-import { SubmitButton } from "@/components/SubmitButton";
-import { Main } from "@/components/Main";
 
 const schema = z.object({
   name: z.string().nonempty({ message: "What should I call you?" }),
@@ -23,7 +24,8 @@ const schema = z.object({
     .refine((val) => val === "" || /^[0-9]{10,15}$/.test(val ?? ""), {
       message: "10 digits (local US) or 11-15 digits (international)",
     }),
-  email: z.string().email({ message: "This doesn't look right" }),
+  email: z.email({ message: "This doesn't look right" }),
+  website: z.string(),
   message: z.string().nonempty({ message: "Any thoughts?" }),
 });
 
@@ -86,6 +88,11 @@ export default function Greeting() {
             label="Phone"
             error={errors.phone?.message}
             disabled={pending}
+          />
+          <HoneyPot
+            {...register("website")}
+            tabIndex={-1}
+            autoComplete="off"
           />
           <TextareaField
             {...register("message")}
