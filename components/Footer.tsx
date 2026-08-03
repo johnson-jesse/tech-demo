@@ -15,6 +15,12 @@ export function Footer() {
       </Link>
       <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="/hubspace"
+      >
+        {pathname === "/hubspace" ? "[ Hubspace ]" : "Hubspace"}
+      </Link>
+      <Link
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/follow"
       >
         {pathname === "/follow" ? "[ Follow ]" : "Follow"}
