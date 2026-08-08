@@ -6,8 +6,8 @@ export default function HubspacePage() {
           <h1 className="text-5xl font-bold tracking-tight">Hubspace</h1>
 
           <p className="mt-4 text-xl text-slate-300">
-            A real-time multi person collaboration space built with TypeScript,
-            Express, WebSockets, and SQLite.
+            An exploratory stack simulating a real-time multi person collaboration space built with TypeScript,
+            Express, WebSockets, SQLite, and Prisma.
           </p>
 
           <a
